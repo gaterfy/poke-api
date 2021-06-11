@@ -13,8 +13,7 @@ class PokeService
     (1..).each do |n|
       result = facade_result(n)
 
-      return false unless result.present?
-      return false if Pokemon.exists?(name: result.name)
+      return false if !result || Pokemon.exists?(name: result.name) || result.name.blank?
 
       type_ids = create_types(result.types) if result.types.present?
       create_pokemon(result, type_ids)
