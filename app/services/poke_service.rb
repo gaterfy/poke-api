@@ -5,7 +5,7 @@ class PokeService
   def call
     (1..).each { |n|
       result = facade_result(n)
-      p result
+      p n
       return unless result.present?
 
       type_ids = create_types(result.types) if result.types.present?
@@ -33,7 +33,7 @@ class PokeService
   private
 
   def facade_result(id)
-    @_facade_result ||= http_client.get_poke(id: id)
+    @_facade_result = http_client.get_poke(id: id)
   end
 
   def http_client

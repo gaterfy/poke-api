@@ -3,7 +3,7 @@
 
 
 namespace :scheduler do
-  desc "persist pokemons from pokeapi in database"
+  desc "persist pokemons from pokeapi"
 
   task :run_poke_api => [:environment] do
     PokeWorker.new.perform

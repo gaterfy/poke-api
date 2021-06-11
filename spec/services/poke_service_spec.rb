@@ -33,9 +33,10 @@ RSpec.describe PokeService, type: :service do
       "weight": 69
     }
   end
+  let(:status) { 200 }
 
   before do
-    WebMock.stub_request(:get, /pokeapi.co/).to_return(body: '{}', status: 404)
+    WebMock.stub_request(:get, /pokeapi.co/).to_return(body: '{}', status: status)
     allow(service).to receive(:facade_result).and_return(body)
   end
 
@@ -47,25 +48,25 @@ RSpec.describe PokeService, type: :service do
       it 'creates types' do
         expect(service).to change { Type.count }.by(1)
       end
-    end
 
-    context 'when there is no data for the given id' do
-      it 'creates pokemons' do
-        expect(service).to change { Pokemon.count }.by(1)
-      end
-      it 'creates types' do
-        expect(service).to change { Type.count }.by(1)
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
       end
     end
 
     context 'when there is no data for the given id' do
       let(:body) { "NOT FOUND" }
+      let(:status) { 404 }
 
       it 'does not creates pokemons' do
         expect(service).to_not change { Pokemon.count }.by(1)
       end
       it 'does not creates types' do
         expect(service).to_not change { Type.count }.by(1)
+      end
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
       end
     end
   end
