@@ -1,7 +1,7 @@
 class CreatePokemons < ActiveRecord::Migration[6.1]
   def change
     create_table :pokemons do |t|
-      t.string :name
+      t.string :name, null: false, index: { unique: true }
       t.integer :base_experience
       t.integer :height
       t.boolean :is_default

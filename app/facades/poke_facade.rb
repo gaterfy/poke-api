@@ -1,12 +1,11 @@
 require 'poke-api-v2'
 
 class PokeFacade
+  def initialize; end
 
-  def initialize
-  end
-
-  def get_poke
-    PokeApi.get(pokemon: {limit: 30, offset: 15})
+  def get_poke(id:)
+    p id
+    PokeApi.get(pokemon: id)
   end
 
 end

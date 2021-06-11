@@ -12,12 +12,16 @@
 #  is_default               :boolean
 #  location_area_encounters :string
 #  moves                    :string
-#  name                     :string
+#  name                     :string           not null
 #  order                    :integer
 #  types                    :text
 #  weight                   :integer
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#
+# Indexes
+#
+#  index_pokemons_on_name  (name) UNIQUE
 #
 require "test_helper"
 

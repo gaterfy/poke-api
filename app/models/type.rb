@@ -5,6 +5,7 @@ class Type < ApplicationRecord
   serialize :names, Array
   serialize :moves, Array
 
+  has_many :pokemon
 
 end
 
