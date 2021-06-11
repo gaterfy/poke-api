@@ -23,7 +23,6 @@
 #
 #  index_pokemons_on_name  (name) UNIQUE
 #
-# spec/models/pokemon_spec.rb
 
 require 'rails_helper'
 

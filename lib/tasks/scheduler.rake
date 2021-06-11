@@ -1,5 +1,5 @@
 
-#  task :run_poke_api, [:number] do |task, args|
+#  rake "scheduler:run_poke_api"
 
 
 namespace :scheduler do
