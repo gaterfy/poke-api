@@ -22,5 +22,6 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   name: poke
   database: poke_production #db/production.sqlite3
