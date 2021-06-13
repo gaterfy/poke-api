@@ -12,3 +12,4 @@ log/
 .rakeTasks
 .generators
 db/
+public/apidocs

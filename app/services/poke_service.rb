@@ -11,16 +11,17 @@ class PokeService
 
   def call
     (1..).each do |n|
+      puts "pokemon created: #{n}"
       result = facade_result(n)
 
-      return false if !result || Pokemon.exists?(name: result.name) || result.name.blank?
+      return if !result || Pokemon.exists?(name: result.name) || result.name.blank?
 
       type_ids = create_types(result.types) if result.types.present?
       create_pokemon(result, type_ids)
     end
-
-    true
   end
+
+  private
 
   def create_pokemon(result, type_ids)
     ActiveRecord::Base.transaction do
@@ -42,8 +43,6 @@ class PokeService
     end
   end
 
-  private
-
   def facade_result(id)
     @_facade_result = http_client.get_poke(id: id)
   end
@@ -53,13 +52,6 @@ class PokeService
   end
 
   def create_types(lst)
-    list_types_id = []
-
-    lst.each do |type|
-      type_created = Type.create(name: type.type.name)
-      list_types_id.push(type_created.id)
-    end
-
-    list_types_id
+    lst.map { |type| Type.create(name: type.type.name).id }
   end
 end

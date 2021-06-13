@@ -1,6 +1,12 @@
 module Api
   module V1
     class PokemonController < ApplicationController
+      swagger_controller :pokemon, 'Pokemon'
+
+      swagger_api :index do
+        summary 'Returns all posts'
+        notes 'Notes...'
+      end
 
       def index
         render json: Pokemon.all.includes(:types).select(:id, :name, :types)

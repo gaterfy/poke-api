@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :pokemon, only: [:show, :index]
     end
   end
+
+  get '/api' => redirect('/swagger/dist/index.html?url=/apidocs/api-docs.json')
 end
