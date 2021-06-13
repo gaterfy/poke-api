@@ -26,6 +26,6 @@
 #
 FactoryBot.define do
   factory :pokemon do
-    name { "butterfree" }
+    name { 'butterfree' }
   end
 end

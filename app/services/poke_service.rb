@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-# This service should create pokemon and types
+# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+# call pokemon facade
 class PokeService
   attr_reader :result
 
@@ -53,3 +54,5 @@ class PokeService
     lst.map { |type| Type.create(name: type.type.name).id }
   end
 end
+
+# rubocop:enable Metrics/AbcSize, Metrics/MethodLength

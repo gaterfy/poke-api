@@ -1,4 +1,4 @@
-# spec/models/pokemon_spec.rb
+# frozen_string_literal: true
 
 require 'rails_helper'
 
@@ -42,10 +42,10 @@ RSpec.describe PokeService, type: :service do
   describe '#describe' do
     context 'when the request is success' do
       it 'creates pokemons' do
-        expect{ service }.to change(Pokemon, :count).from(0).to(1)
+        expect { service }.to change(Pokemon, :count).from(0).to(1)
       end
       it 'creates types' do
-        expect{ service }.to change(Type, :count).by(1)
+        expect { service }.to change(Type, :count).by(1)
       end
     end
 
@@ -55,10 +55,10 @@ RSpec.describe PokeService, type: :service do
       end
 
       it 'does not creates pokemons' do
-        expect{ service }.to_not change(Pokemon, :count)
+        expect { service }.to_not change(Pokemon, :count)
       end
       it 'does not creates types' do
-        expect{ service }.to_not change(Type, :count)
+        expect { service }.to_not change(Type, :count)
       end
     end
   end

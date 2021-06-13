@@ -46,7 +46,7 @@ jobs:
       - name: Install Rubocop gem
         run: gem install rubocop
       - name: Run Rubocop
-        run: rubocop app spec # I want specify only `app` and `spec` folders to inspect
+        run: rubocop app # I want specify only `app` folder to inspect
         with:
           action_config_path: ".github/config/rubocop_linter_action.yml"
       - name: Yarn install

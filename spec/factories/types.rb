@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :type do
-    name { "flying" }
+    name { 'flying' }
   end
 end
-

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# poke worker job
 class PokeWorker
   include Sidekiq::Worker
 
