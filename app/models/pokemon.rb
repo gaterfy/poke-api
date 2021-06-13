@@ -1,7 +1,7 @@
 class Pokemon < ApplicationRecord
   serialize :abilities, Array
   serialize :held_items, Array
-  serialize :types, Array
+  serialize :types, Array #remove that
 
   has_many :types
   validates :name, presence: true

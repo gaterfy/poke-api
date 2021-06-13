@@ -47,10 +47,6 @@ RSpec.describe PokeService, type: :service do
       it 'creates types' do
         expect{ service }.to change(Type, :count).by(1)
       end
-
-      it 'violate' do
-        expect(service).to eq(false)
-      end
     end
 
     context 'when there is no data for the given id' do

@@ -26,12 +26,12 @@ class PokeService
   def create_pokemon(result, type_ids)
     ActiveRecord::Base.transaction do
       Pokemon.create!(
-        abilities: result.abilities,
+        abilities: result.abilities.as_json,
         base_experience: result.base_experience,
         forms: result.forms,
         game_indices: result.game_indices,
         height: result.height,
-        held_items: result.held_items,
+        held_items: result.held_items.as_json,
         is_default: result.is_default,
         location_area_encounters: result.location_area_encounters,
         moves: result.moves,
