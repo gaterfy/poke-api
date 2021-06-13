@@ -11,13 +11,14 @@ class PokeService
 
   def call
     (1..).each do |n|
-      puts "pokemon created: #{n}"
       result = facade_result(n)
 
       return if !result || Pokemon.exists?(name: result.name) || result.name.blank?
 
       type_ids = create_types(result.types) if result.types.present?
       create_pokemon(result, type_ids)
+
+      puts "pokemon created: #{n}"
     end
   end
 
