@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module Api
   module V1
+    # pokemon controller
     class PokemonController < ApplicationController
       swagger_controller :pokemon, 'Pokemon'
 
@@ -19,4 +22,3 @@ module Api
     end
   end
 end
-

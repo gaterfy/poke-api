@@ -1,13 +1,10 @@
-# app/services/poke_service.rb
 # frozen_string_literal: true
 
-# This should create pokemon and types
+# This service should create pokemon and types
 class PokeService
   attr_reader :result
 
-  def initialize
-    @result = false
-  end
+  def initialize; end
 
   def call
     (1..).each do |n|
@@ -49,7 +46,7 @@ class PokeService
   end
 
   def http_client
-    @http_client ||= PokeFacade.new
+    @_http_client ||= PokeFacade.new
   end
 
   def create_types(lst)
