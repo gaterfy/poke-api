@@ -20,7 +20,6 @@ gem 'poke-api-v2'
 #gem 'httpclient', '~> 2.7', '>= 2.7.1'
 gem "sidekiq"
 gem 'swagger-docs'
-gem 'rswag', '~> 2.4.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -37,6 +36,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
+  gem 'rswag', '~> 2.4.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 end
