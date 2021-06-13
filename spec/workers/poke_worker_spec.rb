@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'spec_helper'
 Sidekiq::Testing.fake!
 
 RSpec.describe PokeWorker, type: :worker do
