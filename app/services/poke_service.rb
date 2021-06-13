@@ -10,7 +10,7 @@ class PokeService
     (1..).each do |n|
       result = facade_result(n)
 
-      return if !result || Pokemon.exists?(name: result.name) || result.name.blank?
+      break if !result || Pokemon.exists?(name: result.name) || result.name.blank?
 
       type_ids = create_types(result.types) if result.types.present?
       create_pokemon(result, type_ids)
@@ -46,7 +46,7 @@ class PokeService
   end
 
   def http_client
-    @_http_client ||= PokeFacade.new
+    @http_client ||= PokeFacade.new
   end
 
   def create_types(lst)

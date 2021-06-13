@@ -46,9 +46,9 @@ jobs:
       - name: Install Rubocop gem
         run: gem install rubocop
       - name: Run Rubocop
+        with:
+          action_config_path: ".github/config/rubocop_linter_action.yml"
         run: rubocop app spec # I want specify only `app` and `spec` folders to inspect
-        Style/Documentation:
-          Enabled: false
       - name: Yarn install
         run: yarn --frozen-lockfile
       - name: Test with RSpec
