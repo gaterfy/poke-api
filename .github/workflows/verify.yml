@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: ubuntu-latest
 
@@ -47,6 +47,8 @@ jobs:
         run: gem install rubocop
       - name: Run Rubocop
         run: rubocop app spec # I want specify only `app` and `spec` folders to inspect
+        Style/Documentation:
+          Enabled: false
       - name: Yarn install
         run: yarn --frozen-lockfile
       - name: Test with RSpec

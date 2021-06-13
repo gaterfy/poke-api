@@ -9,7 +9,6 @@ class Pokemon < ApplicationRecord
 
   has_many :types
   validates :name, presence: true
-
 end
 
 # == Schema Information

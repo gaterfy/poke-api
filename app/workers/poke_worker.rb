@@ -3,7 +3,7 @@
 class PokeWorker
   include Sidekiq::Worker
 
-  def perform(*args)
+  def perform(*_args)
     PokeService.new.call
   end
 end
