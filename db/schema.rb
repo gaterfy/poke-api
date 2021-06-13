@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_200540) do
     t.text "abilities"
     t.text "forms"
     t.text "game_indices"
-    t.text "types"
     t.string "location_area_encounters"
     t.text "held_items"
     t.string "moves"
@@ -32,14 +31,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_200540) do
   end
 
   create_table "types", force: :cascade do |t|
-    t.string "name"
-    t.text "damage_relations"
-    t.string "game_indices"
-    t.text "generation"
-    t.text "move_damage_class"
-    t.string "names"
+    t.string "name", null: false
     t.integer "pokemon_id"
-    t.string "moves"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pokemon_id"], name: "index_types_on_pokemon_id"

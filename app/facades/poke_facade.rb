@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'poke-api-v2'
 
 class PokeFacade

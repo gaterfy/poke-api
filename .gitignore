@@ -13,3 +13,4 @@ log/
 .generators
 db/
 public/apidocs
+test/

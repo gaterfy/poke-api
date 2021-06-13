@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 class Pokemon < ApplicationRecord
   serialize :abilities, Array
   serialize :held_items, Array
-  serialize :types, Array #remove that
+  serialize :forms, Array
+  serialize :game_indices, Array
+  serialize :moves, Array
 
   has_many :types
   validates :name, presence: true
@@ -24,7 +28,6 @@ end
 #  moves                    :string
 #  name                     :string           not null
 #  order                    :integer
-#  types                    :text
 #  weight                   :integer
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null

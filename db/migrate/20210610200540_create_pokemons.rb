@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePokemons < ActiveRecord::Migration[6.1]
   def change
     create_table :pokemons do |t|
@@ -10,7 +12,6 @@ class CreatePokemons < ActiveRecord::Migration[6.1]
       t.text :abilities
       t.text :forms
       t.text :game_indices
-      t.text :types
       t.string :location_area_encounters
       t.text :held_items
       t.string :moves

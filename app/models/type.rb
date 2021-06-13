@@ -1,29 +1,18 @@
 class Type < ApplicationRecord
-  serialize :damage_relations, Hash
-  serialize :move_damage_class, Hash
-  serialize :generation, Hash
-  serialize :names, Array
-  serialize :moves, Array
 
-  has_many :pokemon
-
+  has_many :pokemons
+  validates :name, presence: true
 end
 
 # == Schema Information
 #
 # Table name: types
 #
-#  id                :integer          not null, primary key
-#  damage_relations  :text
-#  game_indices      :string
-#  generation        :text
-#  move_damage_class :text
-#  moves             :string
-#  name              :string
-#  names             :string
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  pokemon_id        :integer
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  pokemon_id :integer
 #
 # Indexes
 #

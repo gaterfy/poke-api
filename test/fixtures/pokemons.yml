@@ -14,7 +14,6 @@
 #  moves                    :string
 #  name                     :string           not null
 #  order                    :integer
-#  types                    :text
 #  weight                   :integer
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
