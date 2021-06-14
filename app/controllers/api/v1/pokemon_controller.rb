@@ -7,8 +7,7 @@ module Api
       swagger_controller :pokemon, 'Pokemon'
 
       swagger_api :index do
-        summary 'Returns all posts'
-        notes 'Notes...'
+        summary 'Returns all pokemons'
       end
 
       def index

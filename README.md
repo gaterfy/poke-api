@@ -27,10 +27,10 @@ rvm install 2.7.3
 
 ### Install dependencies
 
-Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+Using [Bundler](https://github.com/bundler/bundler) :
 
 ```shell
-bundle && yarn
+bundle 
 ```
 
 ### Initialize the database
@@ -44,13 +44,10 @@ rails db:create db:migrate
 ```shell
 bundle exec rake "scheduler:run_poke_api"
 ```
-### Add heroku remotes
 
-Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
-
+### test project with rspec
 ```shell
-heroku git:remote -a project
-heroku git:remote --remote heroku-staging -a project-staging
+bundle exec rspec spec
 ```
 
 ## Serve
@@ -59,55 +56,17 @@ heroku git:remote --remote heroku-staging -a project-staging
 rails s
 ```
 
-## Deploy
+## Launch api
 
-### With Heroku pipeline (recommended)
+To launch the api:
 
-Push to Heroku staging remote:
-
-```shell
-git push heroku-staging
+* index
+```
+http://localhost:3000/api/v1/pokemon
+```
+* show
+```
+http://localhost:3000/api/v1/pokemon/bulbasaur
 ```
 
-Go to the Heroku Dashboard and [promote the app to production](https://devcenter.heroku.com/articles/pipelines) or use Heroku CLI:
-
-```shell
-heroku pipelines:promote -a project-staging
-```
-
-### Directly to production (not recommended)
-
-Push to Heroku production remote:
-
-```shell
-git push heroku
-```
-
-
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # poke-api
