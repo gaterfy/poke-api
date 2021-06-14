@@ -12,6 +12,6 @@ RSpec.describe PokeFacade, type: :facade do
   describe '#get_poke' do
     subject(:get_poke) { facade.get_poke(id: 1) }
 
-    it { p get_poke.as_json } # is_expected.to be_a(PokeApi::Pokemon) }
+    it { is_expected.to be_a(PokeApi::Pokemon) }
   end
 end

@@ -1,14 +1,14 @@
 # Poke-Api
 
-[project.com](https://project.com)
+[herokuapp](https://safe-refuge-96073.herokuapp.com/api/v1/pokemon)
 
 ## Install
 
 ### Clone the repository
 
 ```shell
-git clone git@github.com:juliendargelos/project.git
-cd project
+git clone https://github.com/gaterfy/poke-api.git
+cd poke-api
 ```
 
 ### Check your Ruby version
@@ -17,12 +17,12 @@ cd project
 ruby -v
 ```
 
-The ouput should start with something like `ruby 2.5.1`
+The ouput should start with something like `ruby 2.7.3`
 
-If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+If not, install the right ruby version using [rvm](https://github.com/rvm/rvm) (it could take a while):
 
 ```shell
-rbenv install 2.5.1
+rvm install 2.7.3
 ```
 
 ### Install dependencies
@@ -33,18 +33,17 @@ Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.co
 bundle && yarn
 ```
 
-### Set environment variables
-
-Using [Figaro](https://github.com/laserlemon/figaro):
-
-See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
-
 ### Initialize the database
 
 ```shell
-rails db:create db:migrate db:seed
+rails db:create db:migrate
 ```
 
+### use task rake to persist data
+
+```shell
+bundle exec rake "scheduler:run_poke_api"
+```
 ### Add heroku remotes
 
 Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):

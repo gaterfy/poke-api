@@ -8,7 +8,7 @@ class PokeService
   def initialize; end
 
   def call
-    (1..5).each do |n|
+    (1..).each do |n|
       result = facade_result(n)
 
       break if !result || Pokemon.exists?(name: result.name) || result.name.blank?
