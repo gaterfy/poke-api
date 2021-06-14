@@ -12,7 +12,7 @@ module Api
       end
 
       def index
-        render json: Pokemon.all.includes(:types).select(:id, :name, :types)
+        render json: Pokemon.all.includes(:types).select("id, name, types")
       end
 
       def show

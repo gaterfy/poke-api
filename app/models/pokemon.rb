@@ -7,7 +7,7 @@ class Pokemon < ApplicationRecord
   serialize :game_indices, Array
   serialize :moves, Array
 
-  has_many :types
+  has_and_belongs_to_many :types
   validates :name, presence: true
 end
 

@@ -10,25 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_200540) do
-
-  create_table "pokemons", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "base_experience"
-    t.integer "height"
-    t.boolean "is_default"
-    t.integer "order"
-    t.integer "weight"
-    t.text "abilities"
-    t.text "forms"
-    t.text "game_indices"
-    t.string "location_area_encounters"
-    t.text "held_items"
-    t.string "moves"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_pokemons_on_name", unique: true
-  end
+ActiveRecord::Schema.define(version: 2021_06_10_130650) do
 
   create_table "types", force: :cascade do |t|
     t.string "name", null: false
