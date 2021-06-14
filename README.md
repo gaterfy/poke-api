@@ -50,15 +50,15 @@ bundle exec rake "scheduler:run_poke_api"
 bundle exec rspec spec
 ```
 
-## Serve
+### Serve
 
 ```shell
 rails s
 ```
 
-## Launch api
+### Launch api
 
-To launch the api:
+To launch the api (local) :
 
 * index
 ```
@@ -67,6 +67,17 @@ http://localhost:3000/api/v1/pokemon
 * show
 ```
 http://localhost:3000/api/v1/pokemon/bulbasaur
+```
+
+On Heroku:
+
+* index
+```
+https://safe-refuge-96073.herokuapp.com/api/v1/pokemon
+```
+* show
+```
+https://safe-refuge-96073.herokuapp.com/api/v1/pokemon/bulbasaur
 ```
 
 # poke-api
