@@ -8,9 +8,9 @@ RSpec.describe 'api/v1/pokemon', type: :request do
 
   describe "GET #index" do
     it "should get index" do
-      # request
+      request
 
-      # expect(response).to have_http_status(200)
+      expect(response).to have_http_status(200)
     end
   end
 end
