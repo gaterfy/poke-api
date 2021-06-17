@@ -7,8 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-test:
-
+  build:
     runs-on: ubuntu-latest
 
     services:
@@ -45,8 +44,10 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Install Rubocop gem
         run: gem install rubocop
+  rubocop-lint:
       - name: Run Rubocop
         run: rubocop app # I want specify only `app` folder to inspect
+  rspec-test:
       - name: Yarn install
         run: yarn --frozen-lockfile
       - name: Test with RSpec
