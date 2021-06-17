@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :houses
+
   get '/api' => redirect('/swagger/dist/index.html?url=/apidocs/api-docs.json')
 end
