@@ -17,7 +17,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'poke-api-v2'
-#gem 'httpclient', '~> 2.7', '>= 2.7.1'
+#cgem 'httpclient', '~> 2.7', '>= 2.7.1'
 gem "sidekiq"
 gem 'swagger-docs'
 # Use Redis adapter to run Action Cable in production
